@@ -1,0 +1,41 @@
+
+<div class="container">
+    <h3>User Order Details</h3>
+<div class="container card ">
+  <div class="row">
+      <div class="col 3">
+          <h3></h3>
+      </div>
+      <div class="col 3">
+          <h1></h1>
+      </div>
+       <table border="5" class="table table-hover table-responsive-md" >
+          <tr class="thead dark">
+              <th>Order Id</th> <th>Customer First Name</th><th>Customer Last Name</th><th>Customer Address</th>
+              <th>Product Name</th><th>Product Image </th><th>product Description</th>
+              <th>Total Bill</th><th>User Name</th>
+          </tr>
+          <tr *ngFor="let allUserOrderDetails of products ">
+              <td >{{allUserOrderDetails.orderid}}</td>
+              <td>{{allUserOrderDetails.firstname}}</td>
+              <td>{{allUserOrderDetails.lastname}}</td>
+              <td>{{allUserOrderDetails.customeraddress}}</td>
+              <td>{{allUserOrderDetails.productname}}</td>
+              <td><img src='{{allUserOrderDetails.productimage}}' style="width:120px;" alt="image"></td>
+              <td>{{allUserOrderDetails.productdescription}}</td>
+              <td style="color: #B12704; ">{{allUserOrderDetails.productgrandtotal  |currency:'INR'}}</td>
+              <td>{{allUserOrderDetails.username}}</td>
+              <!-- <td><img src='{{allUserOrderDetails.productImage}}' style="width:120px;" alt="image"></td>
+              <td style="color: #B12704; ">{{allUserOrderDetails.productPrice  |currency:'INR'}}</td>
+              <td>{{allUserOrderDetails.productDescription}}</td> -->
+           </tr> 
+      </table> 
+     
+      
+  </div>
+
+</div>
+
+
+
+

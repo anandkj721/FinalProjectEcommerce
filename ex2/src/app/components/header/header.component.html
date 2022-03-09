@@ -1,0 +1,40 @@
+<header>
+
+    <div class="navbar navbar-dark  shadow-sm" style="background-color: #2F4F4F">
+        <div class="navbar-brand align-item-center d-flex">
+
+            <strong style="font-size: 30px;">Electronic Devices</strong>
+            <span id="spanRightSearch" style="margin-left: 10 px; color: #2F4F4F;">**</span>
+            <div class="form-group  ">
+                <input type="text" class="form-control " [(ngModel)]="searchTerm" (keyup)="search($event)"
+                    placeholder="search products" style="width:100%">
+            </div>
+        </div>
+        <div>
+            <ng-container *ngIf="showUserName">
+                <a style="text-decoration: none; color: white;" id="showUserName"
+                    [routerLink]="['/userOrders']"><b>{{selectedMessage}}</b></a>
+            </ng-container>
+        </div>
+        <div class="form-group">
+            <ng-container *ngIf="loginNgContainer">
+                <button class="btn btn-primary " id="btnLogin" (click)="login()"
+                    style="margin-left:400px;  width: 80px;">Login</button>
+            </ng-container>
+        </div>
+        <div class="form-group" style="margin-left: 10px;">
+            <ng-container *ngIf="logoutNgContainer">
+                <button class="btn btn-primary  " id="btnLogout" (click)="logout()">Logout</button>
+            </ng-container>
+        </div>
+        <div class="form-group" style="margin-left: 10px;">
+            <ng-container *ngIf="logoutNgContainer">
+                <button class="btn btn-primary  " id="btnLogout" (click)="adminLogout()">Admin</button>
+            </ng-container>
+        </div>
+        <button routerLink="cart" class="btn btn-primary" style="background-color: darkslategrey">
+            <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+            <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+        </button>
+    </div>
+</header>
